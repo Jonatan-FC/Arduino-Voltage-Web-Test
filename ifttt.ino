@@ -7,16 +7,15 @@ byte mac[] = {
 IPAddress ip(192, 168, 0, 177);
 float lectura;
 float volt;
-
 EthernetServer server(80);
-
-float value1 = 0;
-String value2 = "2023";  // Fecha y hora fijas
-int value3 = 2;
+float value1;
+float value2 = 0;
+float value3;
 
 void setup() {
   Serial.begin(9600);
   pinMode(A0, INPUT);
+ 
   
   Ethernet.begin(mac, ip);
 
@@ -29,8 +28,9 @@ void setup() {
 void loop() {
   lectura = analogRead(A0);
   volt = lectura / 1023.0 * 5.0;
-
+  
    value1 = volt;
+   
    sendDataToSheet();
     
     delay(10000);
@@ -67,9 +67,8 @@ void loop() {
     client.stop();
     
    
-    // La fecha y hora ya está definida como valor fijo
-    value3 = 2;
-
+   
+    
     
   }
 }
@@ -78,8 +77,8 @@ void sendDataToSheet() {
   EthernetClient client;
   
   if (client.connect("maker.ifttt.com", 80)) {
-    String url = "/trigger/test/with/key/bHNZ2E5bRfePNBIHQkCWr-RLkbnr72gVg-y1X337tKp";
-    url += "?value1=" + String(value1) + "&value2=" + value2 + "&value3=" + String(value3);
+    String url = "/trigger/volt/with/key/bHNZ2E5bRfePNBIHQkCWr-RLkbnr72gVg-y1X337tKp";
+    url += "?value1=" + String(value1) + "&value2=" + String(value2) + "&value3=" + String(value3);
     
     client.print("GET " + url + " HTTP/1.1\r\n");
     client.print("Host: maker.ifttt.com\r\n");
