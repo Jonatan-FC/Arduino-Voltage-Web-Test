@@ -12,8 +12,8 @@ $client->addScope(Sheets::SPREADSHEETS_READONLY);
 
 try {
     $service = new Sheets($client);
-    $spreadsheetId = '1zs_mH0qJ80ZZ1ztfcSYoU5STr2jM1WjWsdcQpeCneNw'; //Hoja de google, en este caso V
-    $range = '!A:B'; //Rango toda la columna A y B
+    $spreadsheetId = '1hA1DUp_8MnPowlfCDg3PJk3rotkJ1xvGfFTtlRVnf1k'; //Hoja de google, en este caso V
+    $range = '!A:B'; //Rango toda la columna A y c
 
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
     $values = $response->getValues();

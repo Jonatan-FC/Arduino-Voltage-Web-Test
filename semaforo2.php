@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Prueba de Lector de Voltaje -  ID</title>
+    <title>Prueba de Lector de Voltaje - Nuevo ID</title>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
     <script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 </head>
 <body>
-    <div id="chart_container_new1" style="width: 260px; height: 300px;"></div>
+    <div id="chart_container_new" style="width: 260px; height: 300px;"></div>
     <script type="text/javascript">
-        var chartNew1;
+        var chartNew;
 
         // Configuración del gráfico de medidor de voltaje - Nuevo ID
-        var chartOptionsNew1 = {
+        var chartOptionsNew = {
             chart: {
                 type: 'gauge',
                 plotBackgroundColor: null,
@@ -22,7 +22,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Lector de Voltaje 1'
+                text: 'Lector de Voltaje 3'
             },
             pane: {
                 startAngle: -150,
@@ -99,18 +99,18 @@
         };
 
         // Crear el gráfico de medidor de voltaje - Nuevo ID
-        chartNew1 = Highcharts.chart('chart_container_new1', chartOptionsNew1);
+        chartNew = Highcharts.chart('chart_container_new', chartOptionsNew);
 
         // Función para actualizar el valor del medidor con datos AJAX
         function updateVoltageNew() {
             $.ajax({
-                url: 'get_voltage.php', // Cambia el nombre del archivo si es necesario
+                url: 'get_voltage2.php', // Cambia el nombre del archivo si es necesario
                 dataType: 'json',
                 success: function(data) {
                     if (data && data.voltages && data.voltages.length > 0) {
                         var lastVoltage = parseFloat(data.voltages[data.voltages.length - 1]);
                         if (!isNaN(lastVoltage)) {
-                            chartNew1.series[0].points[0].update(lastVoltage);
+                            chartNew.series[0].points[0].update(lastVoltage);
                         } else {
                             console.error("Received invalid voltage value:", lastVoltage);
                         }
@@ -129,3 +129,4 @@
     </script>
 </body>
 </html>
+

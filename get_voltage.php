@@ -12,7 +12,7 @@ $client->addScope(Sheets::SPREADSHEETS_READONLY);
 
 try {
     $service = new Sheets($client);
-    $spreadsheetId = '1LYpudZjT8Hdya5D8zowTCaGpseKZIqA9OZ6mvEOXO1c'; 
+    $spreadsheetId = '1zs_mH0qJ80ZZ1ztfcSYoU5STr2jM1WjWsdcQpeCneNw'; 
     $range = '!B:B'; // Hoja "V", columna B
 
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
