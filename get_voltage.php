@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\\path\\to\\credentials.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\\xampp\\htdocs\\credentials.json');
 
 use Google\Service\Sheets;
 use Google\Client;

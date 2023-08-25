@@ -61,7 +61,7 @@
                 </tr>
             </table>
         </div>
-        <div class="additional-content">
+        <div >
         </div>
     </div>
 </body>

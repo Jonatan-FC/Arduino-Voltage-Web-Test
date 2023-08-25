@@ -22,7 +22,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Lector de Voltaje 2'
+                text: 'Pozo 2'
             },
             pane: {
                 startAngle: -150,
@@ -75,16 +75,17 @@
                 title: {
                     text: 'Voltaje (V)'
                 },
+            
                 plotBands: [{
                     from: 0,
-                    to: 1,
+                    to: 1.5,
                     color: '#DF5353' // Rojo
                 }, {
-                    from: 1,
-                    to: 4,
+                    from: 1.5,
+                    to: 3.5,
                     color: '#DDDF0D' // Amarillo
                 }, {
-                    from: 4,
+                    from: 3.5,
                     to: 5,
                     color: '#55BF3B' // Verde
                 }]

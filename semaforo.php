@@ -11,8 +11,6 @@
     <div id="chart_container_new1" style="width: 260px; height: 300px;"></div>
     <script type="text/javascript">
         var chartNew1;
-
-        // Configuración del gráfico de medidor de voltaje - Nuevo ID
         var chartOptionsNew1 = {
             chart: {
                 type: 'gauge',
@@ -22,7 +20,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Lector de Voltaje 1'
+                text: 'Pozo 1'
             },
             pane: {
                 startAngle: -150,
@@ -54,7 +52,7 @@
                     innerRadius: '103%'
                 }]
             },
-            // El eje del medidor
+            
             yAxis: {
                 min: 0,
                 max: 5,
@@ -75,16 +73,17 @@
                 title: {
                     text: 'Voltaje (V)'
                 },
+            
                 plotBands: [{
                     from: 0,
-                    to: 1,
+                    to: 1.5,
                     color: '#DF5353' // Rojo
                 }, {
-                    from: 1,
-                    to: 4,
+                    from: 1.5,
+                    to: 3.5,
                     color: '#DDDF0D' // Amarillo
                 }, {
-                    from: 4,
+                    from: 3.5,
                     to: 5,
                     color: '#55BF3B' // Verde
                 }]
@@ -98,10 +97,10 @@
             }]
         };
 
-        // Crear el gráfico de medidor de voltaje - Nuevo ID
+        
         chartNew1 = Highcharts.chart('chart_container_new1', chartOptionsNew1);
 
-        // Función para actualizar el valor del medidor con datos AJAX
+        
         function updateVoltageNew() {
             $.ajax({
                 url: 'get_voltage.php', // Cambia el nombre del archivo si es necesario

@@ -12,7 +12,7 @@
     <script type="text/javascript">
         var chartNew;
 
-        // Configuración del gráfico de medidor de voltaje - Nuevo ID
+      
         var chartOptionsNew = {
             chart: {
                 type: 'gauge',
@@ -22,7 +22,7 @@
                 plotShadow: false
             },
             title: {
-                text: 'Lector de Voltaje 3'
+                text: 'Pozo 3'
             },
             pane: {
                 startAngle: -150,
@@ -77,14 +77,14 @@
                 },
                 plotBands: [{
                     from: 0,
-                    to: 1,
+                    to: 1.5,
                     color: '#DF5353' // Rojo
                 }, {
-                    from: 1,
-                    to: 4,
+                    from: 1.5,
+                    to: 3.5,
                     color: '#DDDF0D' // Amarillo
                 }, {
-                    from: 4,
+                    from: 3.5,
                     to: 5,
                     color: '#55BF3B' // Verde
                 }]

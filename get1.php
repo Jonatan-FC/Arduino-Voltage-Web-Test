@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\\path\\to\\credentials.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\\xampp\\htdocs\\credentials.json');
 
 use Google\Service\Sheets;
 use Google\Client;
@@ -12,7 +12,7 @@ $client->addScope(Sheets::SPREADSHEETS_READONLY);
 
 try {
     $service = new Sheets($client);
-    $spreadsheetId = '1hA1DUp_8MnPowlfCDg3PJk3rotkJ1xvGfFTtlRVnf1k'; //Hoja de google, en este caso V
+    $spreadsheetId = '1Ibabq9PW2xfKI1TlbH1knx8GjHm-ZZlv7L_0Av07jdc'; //Hoja de google, en este caso V
     $range = '!A:B'; //Rango toda la columna A y c
 
     $response = $service->spreadsheets_values->get($spreadsheetId, $range);
